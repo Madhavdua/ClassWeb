@@ -3,7 +3,6 @@ const express = require("express");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const jwtkey = process.env.PRIVATE_KEY;
-console.log(jwtkey)
 
 const fetchUser=async(req,res,next)=>{
     let token =req.header('auth-token');
