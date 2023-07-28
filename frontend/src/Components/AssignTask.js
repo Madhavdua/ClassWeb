@@ -34,10 +34,10 @@ function AssignTask() {
 
     const handleSubmit =async (e) => {
         e.preventDefault();
-        // await c.addtask(cred);
-        // c.fetchtasks(localStorage.getItem('code'));
+        await c.addtask(cred);
+        c.fetchtasks(localStorage.getItem('code'));
 
-        // document.getElementById('closemodal').click();
+        document.getElementById('closemodal').click();
     }
 
 
