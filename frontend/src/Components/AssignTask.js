@@ -13,7 +13,7 @@ function AssignTask() {
         assigned_date: "",
         file:null
     })
-    const [allowedFilesize,setallowedFilesize]=useState(5);
+    const [allowedFilesize,setallowedFilesize]=useState(1);
     const[size,setSize]=useState(0);
     const onChange = (e) => {
         // console.log(cred)
