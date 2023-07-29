@@ -139,9 +139,8 @@ function Context(props) {
     let uploadresult = '';
     if (cred.file) {
       uploadresult = await fileupload(cred.file);
-      // console.log(uploadresult.filename);
     }
-    const data = { title: cred.title, description: cred.description, assigned_date: cred.assigned_date, code: localStorage.getItem('code'), file: uploadresult.filename }
+    const data = { title: cred.title, description: cred.description, assigned_date: cred.assigned_date, code: localStorage.getItem('code'), file: uploadresult.url }
     const result = await bodyCall('POST', JSON.stringify(data), '/api/task/createtask');
     if (result.success) {
       setMsg('Task added');

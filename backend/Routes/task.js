@@ -69,12 +69,32 @@ async(req,res)=>{
 )
 
 
+// route for multer**********
 
+// router.post('/fileupload',fetchUser,
+// upload.single('file'),
+// async(req,res)=>{
+//     // console.log(req.file);
+//     return res.json({msg:"File successfully submitted",filename:req.file.filename});
+// }
+// )
+// ***for cloudinary
+const cloudinary=require('cloudinary');
+require('dotenv').config()
+          
+cloudinary.v2.config({ 
+  cloud_name: process.env.CLOUD, 
+  api_key: process.env.API_KEY, 
+  api_secret: process.env.API_SECRET 
+});
 router.post('/fileupload',fetchUser,
-upload.single('file'),
 async(req,res)=>{
-    // console.log(req.file);
-    return res.json({msg:"File successfully submitted",filename:req.file.filename});
+    const file=req.files.file;
+    let url="";
+    await cloudinary.v2.uploader.upload(file.tempFilePath,{folder:"uploads"},(err,result)=>{
+        url=result.url;
+    })
+    return res.json({msg:"File successfully submitted",url:url});
 }
 )
 

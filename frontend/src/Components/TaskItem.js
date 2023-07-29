@@ -2,10 +2,10 @@ import React, { useState ,useEffect,useContext} from 'react'
 import todoimg from '../Images/todoimg.png'
 import context from '../Context/createContext';
 import './style.css'
-
+import env from "react-dotenv";
 function TaskItem(props) {
     const c=useContext(context);
-    const server=process.env.server||"http://127.0.0.1";
+    const server=env.BASE_URL||"http://127.0.0.1";
     const { task } = props;
     const sample_date = task.assigned_date;
     let finalTime, currTime;
@@ -67,7 +67,7 @@ function TaskItem(props) {
                             </button> */}
                         {localStorage.getItem('isAdmin') === "false" && <div>
 
-                            { task.file.length>1?<button className='btn btn-outline-primary' onClick={showattachment}>View attachment</button>:<button className='border-0 bg-light'>No attachment</button>}
+                            { task.file.length>1?<button className='btn btn-outline-primary'><a href={task.file} target='_blank'>View attachment</a></button>:<button className='border-0 bg-light'>No attachment</button>}
                         </div>}
                         {localStorage.getItem('isAdmin') === "true" && <div>
                             <button className='btn' onClick={deletetask}> <i className="fa-sharp fa-solid fa-trash"></i></button>

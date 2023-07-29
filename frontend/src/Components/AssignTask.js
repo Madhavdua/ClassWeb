@@ -59,7 +59,7 @@ function AssignTask() {
                                 <form className="container my-3 mx-2" style={{ width: "90%" }}>
                                     <div className="mb-3" >
                                         <label htmlFor="exampleInputEmail1" className="form-label">Title</label>
-                                        <input style={{backgroundColor:""}} type="text" className="form-control" placeholder='Enter a title of atleast 3 charachter' name='title' onChange={onChange} />
+                                        <input style={{backgroundColor:""}} type="text" className="form-control" placeholder='Enter a title of atleast 5 charachter' name='title' onChange={onChange} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputPassword1" className="form-label" >Description</label>
@@ -76,7 +76,7 @@ function AssignTask() {
 
                                     <div className="modal-footer " style={{justifyContent:"center"}}>
                                         <button id='closemodal' type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                        <button disabled={cred.title.length < 3 || size>allowedFilesize} type="submit" className="btn btn-primary" onClick={handleSubmit} >Assign</button>
+                                        <button disabled={cred.title.length < 5 || size>allowedFilesize} type="submit" className="btn btn-primary" onClick={handleSubmit} >Assign</button>
                                     </div>
                                 </form>
                             </div>

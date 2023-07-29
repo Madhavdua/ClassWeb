@@ -4,6 +4,9 @@ const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 80;
 
+const fileupload=require('express-fileupload');
+app.use(fileupload({useTempFiles:true}));
+
 
 const db = require("./db");
 const URI = process.env.URI || "mongodb://localhost:27017/Classroom";
