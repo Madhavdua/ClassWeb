@@ -4,6 +4,7 @@ import TaskItem from './TaskItem';
 import AssignTask from './AssignTask'
 import context from '../Context/createContext';
 import GroupCard from './GroupCard';
+import Nothing from './Nothing';
 
 
 const Task = (props) => {
@@ -41,14 +42,14 @@ const Task = (props) => {
             <div className='d-flex flex-column'>
 
 
-                <div style={{ height: "100%" }}>
+                {tasks && tasks.length>0 && <div style={{ height: "100%" }}>
 
                     <GroupCard />
 
-                </div>
+                </div>}
                 <div>
 
-                    {(!tasks || tasks.length === 0) && <div className='container'><h5>No Tasks Found</h5></div>}
+                    {(!tasks || tasks.length === 0) && <div className='container'><Nothing parent={"tasks"} admin={localStorage.getItem('isAdmin')=='true'}/></div>}
 
                     {(tasks && tasks.length >= 1) && <div className=''>
 

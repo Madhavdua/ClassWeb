@@ -5,10 +5,12 @@ import { useContext } from 'react'
 import context from '../Context/createContext'
 import AddGroup from './AddGroup';
 import CreateGroup from './CreateGroup';
+import Nothing from './Nothing';
 
 function Enrolledgroups() {
   const c = useContext(context);
-  const { fetchgroups, group } = c;
+  const { fetchgroups} = c;
+  const group=c.group;
   const [isAdmin, setisAdmin] = useState(localStorage.getItem('isAdmin') == 'true');
   useEffect(() => {
     fetchgroups();
@@ -26,7 +28,7 @@ function Enrolledgroups() {
   }
   if(!group || group.length==0){
     return <div>
-      <div>No groups to show</div>
+      <div><Nothing parent={"groups"}/></div>
       {!isAdmin && <AddGroup />}
       {isAdmin && <CreateGroup />}
 
@@ -37,22 +39,18 @@ function Enrolledgroups() {
       {!isAdmin && <AddGroup />}
       {isAdmin && <CreateGroup />}
 
-      {group.length == 0 && <div>No Groups to show</div>}
-      {group.length > 0 && <div>
-        <div>
-
-        </div>
+      {group.length == 0 && <div><Nothing parent={"groups"}/></div>}
+      {(group && group.length > 0) && 
         <div className='d-flex flex-wrap' style={{ justifyContent: "center" }}>
           {
-            group.map((element) => {
-              return <div key={element.code}>
+            group.length>0 && group.map((element) => {
+              return <div key={group.indexOf(element)}>
                 <EnrolledgroupItem group={element} handledeletegroup={handledeletegroup} />
               </div>
             })
           }
 
-        </div>
-      </div>}
+        </div>}
 
     </>
   )

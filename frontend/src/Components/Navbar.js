@@ -1,13 +1,22 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import context from '../Context/createContext'
 import classroom from '../Images/classroom.png'
+import context from '../Context/createContext'
+
 
 const Navbar = () => {
+  const c=useContext(context);
   const navigate = useNavigate();
   const handleLogout = () => {
-    navigate('/')
+    c.setprogress(20);
+    c.setprogress(40);
+    c.setprogress(60);
     localStorage.clear();
+    setTimeout(()=>{
+      c.setprogress(80);
+      navigate('/')
+      c.setprogress(100);
+    },500)
   }
 
   return (

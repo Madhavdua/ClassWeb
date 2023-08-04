@@ -29,7 +29,7 @@ function CreateGroup() {
             </div>
             <div className="modal fade" id="creategroup" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog">
-                    <div className="modal-content" style={{backgroundColor:"#9BE8D8", fontWeight:"bold"}}>
+                    <div className="modal-content" style={{backgroundColor:"#87b1f5", fontWeight:"bold"}}>
                         <div>
 
                             <form className="container my-3 mx-2" style={{ width: "90%" }}>
@@ -45,7 +45,7 @@ function CreateGroup() {
 
                                 <div className="modal-footer " style={{ justifyContent: "center" }}>
                                     <button id='closemodal' type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <button disabled={Cred.title.length < 3} type="submit" className="btn btn-primary" onClick={(e) => {
+                                    <button disabled={Cred.title.length < 3} type="submit" className="btn bg-light text-dark" onClick={(e) => {
 
                                         handleSubmit(e)
                                     }} >Add Group</button>

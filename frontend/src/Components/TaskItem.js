@@ -67,7 +67,7 @@ function TaskItem(props) {
                             </button> */}
                         {localStorage.getItem('isAdmin') === "false" && <div>
 
-                            { task.file.length>1?<button className='btn btn-outline-primary'><a href={task.file} target='_blank'>View attachment</a></button>:<button className='border-0 bg-light'>No attachment</button>}
+                            { task.file.length>1?<button className='btn btn-outline-secondary'><a href={task.file} target='_blank' style={{textDecoration:"none", color:"black"}}>View attachment</a></button>:<button className='border-0 bg-light'>No attachment</button>}
                         </div>}
                         {localStorage.getItem('isAdmin') === "true" && <div>
                             <button className='btn' onClick={deletetask}> <i className="fa-sharp fa-solid fa-trash"></i></button>
