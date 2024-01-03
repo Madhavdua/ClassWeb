@@ -280,3 +280,26 @@
     left: 50%;
     transform: translateX(-50%);
 }
+.complete_screen{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+.login_box{
+    height: auto;
+}
+.grp-card-title{
+    font-size: xx-large;
+}
+.grp-card-name{
+    font-size: larger;
+}
+.card-head-box{
+    height: 18vh;
+}
+@media screen and (max-width:750px) {
+
+    .card-head-box{
+        height: 15vh;
+    }
+}

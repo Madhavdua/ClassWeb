@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
-// import bgImg from '../Images/grp-name.jpg'   
+import { Link } from 'react-router-dom'; 
 import './style.css'
 import context from '../Context/createContext';
 function EnrolledgroupItem(props) {
@@ -20,7 +19,6 @@ function EnrolledgroupItem(props) {
                     <div className='code-square '>
                         <div className='code d-flex'>
                             {group.code}
-
                         </div>
                     </div>
                 </div>

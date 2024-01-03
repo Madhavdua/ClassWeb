@@ -51,8 +51,8 @@ function Signup() {
   }
   return (
     <>
-      <div className='complete_screen d-flex justify-content-center align-items-center' style={{ backgroundImage: `url(${bgLogin})`, backgroundRepeat: "no-repeat", height: "99vh" }}>
-        <div className=' login_box containerrounded py-4 px-3 rounded' style={{ backgroundColor: "white", height: "80%", width: "auto" }} >
+      <div className='complete_screen d-flex justify-content-center align-items-center' style={{ backgroundImage: `url(${bgLogin})`}}>
+        <div className=' login_box containerrounded py-4 px-3 rounded' style={{ backgroundColor: "white" }} >
 
           <div className="mb-3 row my-2 d-flex flex-column fw-semibold" style={{ fontSize: "12px" }}>
             <label htmlFor="staticEusername" className="col-sm-2 col-form-label mx-3">Name</label>
@@ -61,13 +61,13 @@ function Signup() {
             </div>
           </div>
           <div className="mb-3 row my-2 d-flex flex-column fw-semibold" style={{ fontSize: "12px" }}>
-            <label htmlFor="inputPassword" className="col-sm-2 col-form-label mx-3">Password</label>
+            <label htmlFor="inputPassword" className="col-sm-2 col-form-label mx-3">Password </label>
             <div className="col-sm-10">
               <input id='password' type="password" name='password' onChange={onChange} className="fs-6 form-control-plaintext mx-3 px-1 border-bottom" placeholder="Enter password" style={{ fontFamily: 'Kanit' }} />
             </div>
           </div>
-          <div className="mb-3 row my-2 d-flex flex-column fw-semibold" style={{ fontSize: "12px" }}>
-            <label htmlFor="inputPassword" className="col-sm-2 col-form-label mx-3">Confirm Password</label>
+          <div className="mb-3 row my-2 d-flex flex-column fw-semibold" style={{ fontSize: "12px"}}>
+            <label htmlFor="inputPassword" style={{width:"100%"}} className="col-sm-2 col-form-label mx-3">Confirm Password</label>
             <div className="col-sm-10">
               <input type="password" className="fs-6 form-control-plaintext mx-3 px-1 border-bottom" placeholder="Enter password" onChange={onChange} style={{ fontFamily: 'Kanit' }} id="confirmPassword" name='confirmPassword' />
             </div>

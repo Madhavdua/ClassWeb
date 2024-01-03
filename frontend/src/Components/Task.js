@@ -52,11 +52,6 @@ const Task = (props) => {
                     {(!tasks || tasks.length === 0) && <div className='container'><Nothing parent={"tasks"} admin={localStorage.getItem('isAdmin')=='true'}/></div>}
 
                     {(tasks && tasks.length >= 1) && <div className=''>
-
-                        {/* <h3 className='text-center'>Assigned task(s) are shown:</h3> */}
-
-
-
                         <div className='d-flex flex-wrap' style={{ alignItems: "center", justifyContent: "center" }}>
 
                             {tasks.length > 0 && tasks.map((element) => {
