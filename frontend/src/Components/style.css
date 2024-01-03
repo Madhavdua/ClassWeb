@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ubuntu:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .welcome {
     display: grid;
-    grid-template-areas: 
-    "p t t"
-    "p l l";
+    grid-template-areas:
+        "p t t"
+        "p l l";
     grid-column-gap: 25px;
     background-image: url('../Images/welcomebg.jpg');
     position: fixed;
@@ -14,6 +15,7 @@
     align-items: center;
     justify-content: space-around;
 }
+
 .login {
     grid-area: l;
     display: flex;
@@ -105,11 +107,12 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    text-align:center;
+    text-align: center;
     margin-top: 5%;
     color: green;
 }
-.t2{
+
+.t2 {
     font-size: large;
     max-width: 50%;
     height: max-content;
@@ -123,21 +126,24 @@
 }
 
 /* group card */
-.grp-card {
-    position: absolute;
+.grp-name-pill {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.grp-name-pill>button {
+    background-image: linear-gradient(rgb(145, 145, 208), rgb(91, 187, 91));
+    border: none;
     color: white;
-    font-weight: bolder;
-    left: 5%;
-}
-
-.grp-card-title {
-    bottom: 35%;
-    font-size: 6vh;
-}
-
-.grp-card-name {
-    bottom: 18%;
-    font-size: 3vh;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 16px;
 }
 
 /* group item */
@@ -280,26 +286,24 @@
     left: 50%;
     transform: translateX(-50%);
 }
-.complete_screen{
+
+.complete_screen {
     position: fixed;
     width: 100vw;
     height: 100vh;
 }
-.login_box{
+
+.login_box {
     height: auto;
 }
-.grp-card-title{
-    font-size: xx-large;
-}
-.grp-card-name{
-    font-size: larger;
-}
-.card-head-box{
+
+.card-head-box {
     height: 18vh;
 }
+
 @media screen and (max-width:750px) {
 
-    .card-head-box{
+    .card-head-box {
         height: 15vh;
     }
 }
