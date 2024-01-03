@@ -1,0 +1,43 @@
+@media screen and (max-width:1100px) {
+    
+    .welcome{
+        grid-template-areas: 
+        "p t t"
+        "l l l";
+    }
+    .person3 {
+        margin-top: 15vh;
+    }
+    .welcometext {
+        margin-top: 10vh;
+    }
+    .t2{
+        max-width: 70%;
+    }
+}
+@media screen and (max-width:750px) {
+    .welcome{
+        grid-template-areas: 
+        ". p ."
+        "t t t"
+        "t t t"
+        "l l l"
+        "l l l";
+        align-items: baseline;
+    }
+    .person3{
+        margin-top:2vh;
+        height: 20vh;
+    }.welcometext{
+        margin-top: 2vh;
+    }
+    .t2{
+        max-width: 90%;
+    }
+    .websitename{
+        margin-top: 1px;
+    }
+    .websitename >p{
+        font-size: x-small;
+    }
+}
