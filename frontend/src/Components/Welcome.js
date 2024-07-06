@@ -2,55 +2,71 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './style.css'
 import './mobile.css'
-import Typed from 'react-typed';
-import person1 from "../Images/person1.png"
-import person2 from "../Images/person2.png"
-import person3 from "../Images/person3.png"
-import classroom from "../Images/classroom 2.0.png"
+import { motion } from 'framer-motion';
+import bg_vid from '../Images/bg-vid.mp4'
+import bg_vid_mobile from '../Images/bg_vid_mobile.mp4'
+import ReactTyped from 'react-typed';
+
 const Welcome = () => {
     useEffect(() => {
         localStorage.clear();
+        document.getElementById('bg-video').play();
     }, [])
+
+    const heading = "C l a s s r o o m 2.0 ".split(" ");
+    const subhead = "Engage Students, Empowers Teachers";
 
     return (
         <>
-            <div className='websitename'>
-                <img src={classroom} />
-                <p>-inspired by Clasroom</p>
-            </div>
+        <div style={{ width:"100vw", height:"100vh",overflow:"hidden"}}>
+            <motion.div whileHover={{ width: "fit-content", transition: { duration: .5 } }} className="name">
+                © Code by Madhav Dua
+            </motion.div>
+            <video muted loop id="bg-video">
+                <source src={window.innerWidth>750?bg_vid:bg_vid_mobile} type="video/mp4" />
+            </video>
             <div className='welcome'>
-                <div className='person3'>
-                    <img src={person3} />
+                <div className='nav ' style={{ width: "100vw" }}>
+                    <div className='login-text'>Sign in as:</div>
+                    <div className='goto'>
+                        <Link className='btn goto-link' to='/adminlogin'>Teacher</Link>
+                        <Link className='btn goto-link' to='/login'>Student</Link>
+                    </div>
                 </div>
-                <div className="welcometext">
-                    <p className='t1 px-3'>
 
-                        <h1 style={{color:"green", display:"inline"}}>Welcome to the future of education.</h1>
-                    </p>
-                    <Typed className='t2'
-                        strings={[`Ditch the desks,unlock the world.`,
-                        `With Classroom: 
-                        Elevate Your Learning Journey.`, `Join a network of peers and mentors 
-                         who inspire your growth.`,
-                         `Same ease, more engagement`, "Let's Get Started."]}
-                        typeSpeed={40}
+                <div className="welcome-text">
+                    <div className='welcome-head'>
+                        {heading.map((el, i) => (
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{
+                                    duration: 0.25,
+                                    delay: i / 10,
+                                }}
+                                key={i}
+                            >
+                                {el}
+                            </motion.span>
+                        ))}
+
+                    </div>
+                    <ReactTyped className='subhead'
+                        strings={[
+                            "Engage Students, Empower Teachers",
+                            "Increased Efficiency for Teachers",
+                            "Effortless Management",
+                            "Improved Learning Engagement",
+                        ]}
+                        typeSpeed={30}
                         backSpeed={60}
                         loop
                     />
                 </div>
-                <div className='login'>
-
-                    <div className='tlogin'>
-                        <img className='person1' src={person1} />
-                        < Link to="/adminlogin" > <button className="btn-login ">Admin Login  </button></Link >
-                    </div>
-                    <div className='slogin'>
-                        <img className='person2' src={person2} />
-                        < Link to="/login" > <button className="btn-login">Login</button></Link >
-                    </div>
-                </div>
 
             </div>
+
+        </div>
         </>
     )
 }
