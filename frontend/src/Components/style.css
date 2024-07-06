@@ -1,122 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Ubuntu:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+.name {
+    color: black;
+    width: 90px;
+    z-index: 3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 7%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    left: 3%;
+    font-size: large;
+}
+
+#bg-video {
+    opacity:0.7;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
 
 .welcome {
-    display: grid;
-    grid-template-areas:
-        "p t t"
-        "p l l";
-    grid-column-gap: 25px;
-    background-image: url('../Images/welcomebg.jpg');
-    position: fixed;
-    background-size: cover;
-    min-height: 100vh;
+    
     width: 100vw;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.login {
-    grid-area: l;
-    display: flex;
-    height: fit-content;
-    justify-content: center;
-}
-
-.tlogin {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    position: absolute;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
-.btn-login {
+.login-text {
+    font-weight: 500;
+    font-size: larger;
+    font-family: monospace;
+}
+
+.goto {
+    display: flex;
+    padding: 4px 15px;
+    margin-top: 10px;
+}
+
+.goto-link {
+    font-family: monospace;
+    font-size: large;
+    padding: 10px 20px;
+    border: .1px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    margin: 0px 10px;
+    transition: 0.5s ease-in;
+}
+
+.goto-link::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: orange;
+    transition: width 1s;
+    display: block;
+    margin-top: 2px;
+}
+.goto-link:hover::after{
+    width: 110%;
+}
+
+.goto-link:hover {
+    font-weight: bold;
+    color: orange;
+    background-color: white;
+    scale: 1.2;
+}
+
+.welcome-text {
+    height: 80vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: 5%;
+
+}
+
+.welcome-head {
+    padding: 15px;
+    font-size: 7vw;
+}
+
+.subhead {
     font-size: larger;
     width: 100%;
-    height: 100%;
-    border: none;
-    margin: 6px 4px;
-    font-family: 'Pacifico', cursive;
-    font-weight: 300;
-    border-radius: 16px;
-    background-color: black;
-    color: white;
-    opacity: 1;
-    transition: transform 0.2s ease-in;
-}
-
-.btn-login:hover {
-    transform: scale(1.1);
-}
-
-.slogin {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.person1 {
-    max-height: 40vh;
-    width: 100%;
-}
-
-.person2 {
-    max-height: 40vh;
-    width: 100%;
-}
-
-.person3 {
-    grid-area: p;
-}
-
-.person3>img {
-    max-width: 300px;
-    height: 100%;
-    max-height: 40vh;
-}
-
-.websitename {
-    margin: 10px;
-    position: absolute;
-    z-index: 5;
-    left: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-
-.websitename>img {
-    width: 30vh;
-    max-height: 100px;
-    max-width: 30vw;
-    border-radius: 5%;
-}
-
-.websitename>p {
-    position: relative;
-    font-size: small;
-    font-weight: 600;
-}
-
-.welcometext {
-    grid-area: t;
-    font-family: 'Ubuntu', sans-serif;
-    backdrop-filter: blur(3px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 5%;
-    color: green;
-}
-
-.t2 {
-    font-size: large;
-    max-width: 50%;
-    height: max-content;
-    color: rgb(242, 0, 255);
+    text-align: end;
 }
 
 /* taskitem */
@@ -300,9 +286,37 @@
 .card-head-box {
     height: 18vh;
 }
-
+@media screen and (max-width:900px) {
+    .login-text{
+        display: none;
+    }
+    .goto{
+        width: 100vw;
+        margin: none;
+        justify-content: center;
+    }
+    .name{
+        width: fit-content;
+        top: 2%;
+    }
+    .nav{
+        margin-top: 70px;
+    }
+    .subhead{
+        font-size: small;
+    }
+    .welcome-head{
+        font-size: 4vh;
+    }
+}
 @media screen and (max-width:750px) {
-
+    .welcome-text{
+        align-items: end;
+        width: 90vw;
+    }
+    .welcome{
+        align-items: end;
+    }
     .card-head-box {
         height: 15vh;
     }
