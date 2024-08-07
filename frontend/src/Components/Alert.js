@@ -5,7 +5,7 @@ const Alert = (props) => {
   const c = useContext(context);
   return (
     <>
-      {c.alert && <div className="alert alert-primary position-absolute " role="alert" style={{left:"40%"}}>
+      {c.alert && <div className="alert alert-primary position-absolute " role="alert" style={{left:"40%", zIndex:1000}}>
         {c.msg}
       </div>}
 
