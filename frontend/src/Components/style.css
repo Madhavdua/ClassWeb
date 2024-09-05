@@ -44,6 +44,12 @@
     font-family: monospace;
 }
 
+.sample-login{
+    position: absolute;
+    right: 5%;
+    bottom: 5vh;
+}
+
 .goto {
     display: flex;
     padding: 4px 15px;
