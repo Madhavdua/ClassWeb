@@ -15,7 +15,7 @@ function EnrolledgroupItem(props) {
     const { handledeletegroup } = props;
     return (
         <>
-            <div className="grp-item-card card p-3 shadow border border-3" >
+            <div className="grp-item-card m-2 card p-3 shadow border border-3" >
                 <div className='d-flex justify-content-between'>
                 <div className='code-pill rounded p-2'>
                     {group.code}
