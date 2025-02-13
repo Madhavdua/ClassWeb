@@ -1,46 +1,41 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'; 
+import React, { useContext, useState, useEffect } from 'react'
 import './style.css'
+import { Link } from 'react-router-dom';
 import context from '../Context/createContext';
 function EnrolledgroupItem(props) {
     const c = useContext(context);
     const { group } = props;
-    const isAdmin = localStorage.getItem('isAdmin') == 'true';
-    const {handledeletegroup}=props;
+    const [isAdmin, setisAdmin] = useState(false);
+    useEffect(() => {
+        if (localStorage.getItem("isAdmin") == true) {
+            setisAdmin(true);
+        }
+    }, [])
+    
+    const { handledeletegroup } = props;
     return (
         <>
-
-            <div className="card mx-3 my-2 " style={{ minWidth: "320px", width: "max-content", borderRadius: "6%" }}>
-                <div className="card-body grp-item-img " style={{ borderTopLeftRadius: "6%", borderTopRightRadius: "6%" }}>
-                    <h5 className="card-title fs-3">{group.title}</h5>
-
-                    {/* <p className="card-text">Code : {group.code}</p> */}
-                    <p className="card-text fs-5">{group.description}</p>
-                    <div className='code-square '>
-                        <div className='code d-flex'>
-                            {group.code}
-                        </div>
-                    </div>
+            <div className="grp-item-card card p-3 shadow border border-3" >
+                <div className='d-flex justify-content-between'>
+                <div className='code-pill rounded p-2'>
+                    {group.code}
                 </div>
-                <div className='card-body py-2 px-3 border-top border-1 border-secondary ' style={{ marginTop: "6vh" }}>
-                    <div className='d-flex' style={{ justifyContent: "space-between" }}>
-                        <div>
-
-                            <Link className='btn view-task-link' to="/dashboard/task" onClick={async () => {
-                                localStorage.setItem('code', group.code)
-                                localStorage.setItem('grp_title', group.title)
-                            }}>View task</Link>
-                        </div>
-                        <div>
-                            <button type="button" className="btn delete-grp-link" onClick={()=>handledeletegroup(group.code)}>
-                                <i className="fa-sharp fa-solid fa-trash"></i>
-                            </button>
-
-
-                        </div>
-                    </div>
-
+                <button type="button" className="delete-grp-item" onClick={() => handledeletegroup(group.code)}>
+                    <i className="fa-sharp fa-solid fa-trash"></i>
+                </button>
+                    
                 </div>
+                <div className='my-2'>
+                    <p className="grp-item-title">{group.title}</p>
+                    <p className="grp-item-desp text-muted">{group.description}</p>
+                </div>
+                <Link className='view-tasks p-2 rounded fw-bold' to="/dashboard/task" onClick={async () => {
+                    localStorage.setItem('code', group.code)
+                    localStorage.setItem('grp_title', group.title)
+                }}>
+                    View Tasks
+                   {/* <i class="fa-duotone fa-solid fa-file-pen"></i> */}
+                </Link>
             </div>
 
         </>

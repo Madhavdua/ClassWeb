@@ -23,14 +23,14 @@ check('title').isLength({min:3}),
         const code=Math.floor(100000 + Math.random() * 900000).toString();
         grp=await Group.create({
             title:req.body.title,
-            description:req.body.description||"New group",
+            description:req.body.description||"No description provided",
             code:code,
             admin:req.user.id
         })
         let update=await User.findByIdAndUpdate({_id:req.user.id},{$push:{group_list:code}});
-        return res.json(grp);
-        } catch (error) {
-            return res.status(501).json({error:error});
+        return res.status(201).json(grp);
+        } catch (err) {
+            return res.status(501).json({success: false,error:err||"Internal Server error"});
         }
     }
 )

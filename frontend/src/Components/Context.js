@@ -221,13 +221,13 @@ function Context(props) {
     setprogress(60);
     setprogress(90)
     setprogress(100)
+    console.log(json);
     if (json.success === true) {
-
       localStorage.setItem('token', json.authToken);
       setLoggedIn(true);
       return true;
     }
-    setMsg(json.error.length > 0 ? json.error : 'Enter valid cred')
+    setMsg(json.error.length > 0 ? json.error : 'Some error occured')
     return false;
 
   }

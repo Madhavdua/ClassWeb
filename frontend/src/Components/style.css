@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 .name {
     color: black;
@@ -17,7 +17,7 @@
 }
 
 #bg-video {
-    opacity:0.7;
+    opacity: 0.7;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -25,7 +25,7 @@
 }
 
 .welcome {
-    
+
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
     font-family: monospace;
 }
 
-.sample-login{
+.sample-login {
     position: absolute;
     right: 5%;
     bottom: 5vh;
@@ -77,7 +77,8 @@
     display: block;
     margin-top: 2px;
 }
-.goto-link:hover::after{
+
+.goto-link:hover::after {
     width: 110%;
 }
 
@@ -139,41 +140,43 @@
 }
 
 /* group item */
-.grp-item-img {
-    position: relative;
-    background-image: url(../Images/grp-name.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white
+.code-pill {
+    background-color: rgb(209, 211, 245);
+    font-family: "Roboto Mono", serif;
+    width: fit-content;
+    font-weight: 500;
 }
 
-.code-square {
-    position: absolute;
-    border-radius: 50%;
-    left: 50%;
-    top: 80%;
-    width: 100px;
-    height: 50px;
-    background-color: white;
+.grp-item-card {
+    width: 320px;
+    background-color: rgb(252, 250, 250);
 }
 
-.code {
-    position: relative;
-    margin-top: 10%;
-    font-weight: bold;
-    justify-content: center;
+.grp-item-title {
+    font-family: "Work Sans", serif;
+    font-weight: 500;
+    font-size: x-large;
+    margin: 0;
+}
+
+.view-tasks {
+    text-decoration: none;
+    background-color: rgb(193, 222, 245);
     color: black;
+    width: fit-content;
 }
 
-
-.view-task-link:hover {
-    background-color: rgb(255, 0, 183);
-    color: white;
+.view-tasks:hover {
+    background-color: rgb(208, 239, 207);
+}
+.delete-grp-item{
+    border: none;
+    color: grey;
+    width: fit-content;
 }
 
-.delete-grp-link:hover {
-    background-color: red;
-    color: white;
+.grp-item-desp {
+    font-size: small;
 }
 
 /* add button */
@@ -292,37 +295,46 @@
 .card-head-box {
     height: 18vh;
 }
+
 @media screen and (max-width:900px) {
-    .login-text{
+    .login-text {
         display: none;
     }
-    .goto{
+
+    .goto {
         width: 100vw;
         margin: none;
         justify-content: center;
     }
-    .name{
+
+    .name {
         width: fit-content;
         top: 2%;
     }
-    .nav{
+
+    .nav {
         margin-top: 70px;
     }
-    .subhead{
+
+    .subhead {
         font-size: small;
     }
-    .welcome-head{
+
+    .welcome-head {
         font-size: 4vh;
     }
 }
+
 @media screen and (max-width:750px) {
-    .welcome-text{
+    .welcome-text {
         align-items: end;
         width: 90vw;
     }
-    .welcome{
+
+    .welcome {
         align-items: end;
     }
+
     .card-head-box {
         height: 15vh;
     }
