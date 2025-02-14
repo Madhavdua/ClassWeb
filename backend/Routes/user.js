@@ -7,14 +7,14 @@ const User = require('../Schema/User');
 
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const jwtkey = process.env.PRIVATE_KEY||"i am the key";
+const jwtkey = process.env.PRIVATE_KEY || "i am the key";
 
 const { body, validationResult } = require("express-validator")
 
 router.post('/createuser',
     body('username').isLength({ min: 6 })
     , async (req, res) => {
-        const validationError= validationResult(req);
+        const validationError = validationResult(req);
 
         if (!validationError.isEmpty()) {
             return res.status(400).json({ success: false, error: "Name must have atleast 6 charachter" });
@@ -49,7 +49,7 @@ router.post('/createuser',
 router.post('/login',
     body('username').isLength({ min: 6 })
     , async (req, res) => {
-        const error = await validationResult(req);
+        const error = validationResult(req);
 
         if (!error.isEmpty()) { return res.status(500).json({ error: "invalid cred" }); }
         try {
@@ -69,7 +69,7 @@ router.post('/login',
                 id: user._id,
                 username: user.username
             }
-            const token = await jwt.sign(data, jwtkey);
+            const token = jwt.sign(data, jwtkey);
 
             res.json({ authToken: token, success: true });
 
@@ -80,7 +80,7 @@ router.post('/login',
 router.post('/adminlogin',
     body('username').isLength({ min: 6 })
     , async (req, res) => {
-        const error = await validationResult(req);
+        const error = validationResult(req);
 
         if (!error.isEmpty()) { return res.status(500).json({ error: "invalid cred", success: false }); }
         try {
@@ -99,7 +99,7 @@ router.post('/adminlogin',
                 id: user._id,
                 username: user.username
             }
-            const token = await jwt.sign(data, jwtkey);
+            const token = jwt.sign(data, jwtkey);
 
             res.json({ authToken: token, success: true });
 

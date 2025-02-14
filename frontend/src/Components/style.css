@@ -16,101 +16,65 @@
     font-size: large;
 }
 
-#bg-video {
-    opacity: 0.7;
-    position: fixed;
+
+/* For welcome page */
+.welcome {
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
+    display: flex;
+    justify-content:center;
 }
-
-.welcome {
-
-    width: 100vw;
+.section{
+    width: 40%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    position: absolute;
-}
-
-.nav {
-    display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-}
 
-.login-text {
+
+}
+.login-link{
+    background-color: rgb(243, 245, 250);
+    font-size: large;
+    font-family: "Work Sans", serif;
     font-weight: 500;
-    font-size: larger;
-    font-family: monospace;
+    width: 120px;
+    
+}
+.leaning-img{
+    position: absolute;
+    height: 80vh;
+    left: 0;
+    bottom: 0;
+}
+.logo {
+    height: 60px;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    width: auto;
+    object-fit: contain;
+}
+.heading{
+    font-size: 5vw;
+    text-align: center;
+    font-weight: 400;
 }
 
+.sh1{
+    font-family: "Roboto Mono", serif;
+    font-size: 1.4vw;
+}
+
+
+/* for sample login */
 .sample-login {
     position: absolute;
     right: 5%;
     bottom: 5vh;
 }
 
-.goto {
-    display: flex;
-    padding: 4px 15px;
-    margin-top: 10px;
-}
-
-.goto-link {
-    font-family: monospace;
-    font-size: large;
-    padding: 10px 20px;
-    border: .1px solid;
-    border-radius: 10px;
-    text-decoration: none;
-    color: black;
-    margin: 0px 10px;
-    transition: 0.5s ease-in;
-}
-
-.goto-link::after {
-    content: "";
-    width: 0;
-    height: 1px;
-    background-color: orange;
-    transition: width 1s;
-    display: block;
-    margin-top: 2px;
-}
-
-.goto-link:hover::after {
-    width: 110%;
-}
-
-.goto-link:hover {
-    font-weight: bold;
-    color: orange;
-    background-color: white;
-    scale: 1.2;
-}
-
-.welcome-text {
-    height: 80vh;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    font-family: "Roboto Mono", monospace;
-    font-weight: bold;
-    width: fit-content;
-    margin-left: 5%;
-
-}
-
-.welcome-head {
-    padding: 15px;
-    font-size: 7vw;
-}
-
-.subhead {
-    font-size: larger;
-    width: 100%;
-    text-align: end;
-}
 
 /* taskitem */
 .taskitem-card:hover {
@@ -169,7 +133,8 @@
 .view-tasks:hover {
     background-color: rgb(208, 239, 207);
 }
-.delete-grp-item{
+
+.delete-grp-item {
     border: none;
     color: grey;
     width: fit-content;
@@ -297,43 +262,18 @@
 }
 
 @media screen and (max-width:900px) {
-    .login-text {
-        display: none;
-    }
 
-    .goto {
-        width: 100vw;
-        margin: none;
-        justify-content: center;
-    }
 
     .name {
         width: fit-content;
         top: 2%;
     }
 
-    .nav {
-        margin-top: 70px;
-    }
 
-    .subhead {
-        font-size: small;
-    }
-
-    .welcome-head {
-        font-size: 4vh;
-    }
 }
 
 @media screen and (max-width:750px) {
-    .welcome-text {
-        align-items: end;
-        width: 90vw;
-    }
 
-    .welcome {
-        align-items: end;
-    }
 
     .card-head-box {
         height: 15vh;

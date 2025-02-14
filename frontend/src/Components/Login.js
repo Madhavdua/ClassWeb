@@ -41,7 +41,7 @@ function Login() {
           className="login_box container rounded py-4 px-3 rounded"
           style={{ backgroundColor: "white", width: "auto" }}
         >
-          <div className="fs-4 fw-bold top text-center my-2  ">Login</div>
+          <div className="fs-4 fw-bold top text-center my-2  ">Student Login</div>
           <div
             className="mb-3 row my-2 d-flex flex-column fw-semibold"
             style={{ fontSize: "12px" }}
