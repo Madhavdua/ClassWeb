@@ -62,50 +62,21 @@ router.post('/login',
             if (!pass) {
                 return res.status(404).json({ success: false, error: "Please enter valid password" })
             }
-            if (user.isAdmin) {
-                return res.status(404).json({ success: false, error: "Kindly login through admin" })
-            }
+            // if (user.isAdmin) {
+            //     return res.status(404).json({ success: false, error: "Kindly login through admin" })
+            // }
             const data = {
                 id: user._id,
                 username: user.username
             }
             const token = jwt.sign(data, jwtkey);
 
-            res.json({ authToken: token, success: true });
+            return res.json({ authToken: token, success: true, isAdmin:user.isAdmin});
 
         } catch (error) {
-            res.status(500).json({ success: false, error: error });
+            return res.status(500).json({ success: false, error: error });
         }
     })
-router.post('/adminlogin',
-    body('username').isLength({ min: 6 })
-    , async (req, res) => {
-        const error = validationResult(req);
 
-        if (!error.isEmpty()) { return res.status(500).json({ error: "invalid cred", success: false }); }
-        try {
-            let user = await User.findOne({ username: req.body.username });
-            if (!user) {
-                return res.status(404).json({ success: false, error: "No user found" })
-            }
-            let pass = await bcrypt.compare(req.body.password, user.password);
-            if (!pass) {
-                return res.status(404).json({ success: false, error: "Please enter valid password" })
-            }
-            if (!user.isAdmin) {
-                return res.status(404).json({ success: false, error: "Only admins can login here" })
-            }
-            const data = {
-                id: user._id,
-                username: user.username
-            }
-            const token = jwt.sign(data, jwtkey);
-
-            res.json({ authToken: token, success: true });
-
-        } catch (error) {
-            res.status(500).json({ success: false, error: error });
-        }
-    })
 
 module.exports = router;

@@ -26,7 +26,7 @@ const Welcome = () => {
                         </span>
                     </span>
                     <span className='sh1 my-1 '>Smart, Simple, Seamless</span>
-                    <Link className='login-link my-4 btn rounded-pill shadow text-decoration-none' to="/adminlogin">Login</Link>
+                    <Link className='login-link my-4 btn rounded-pill shadow text-decoration-none' to="/login">Login</Link>
                 </section>
 
             </div>

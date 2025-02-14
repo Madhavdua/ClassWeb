@@ -22,7 +22,6 @@ function Login() {
   };
   const handleSubmit = async () => {
     const result = await c.login(cred.username, cred.password);
-    localStorage.setItem("isAdmin", "false");
     if (result) {
       navigate("/dashboard");
     }

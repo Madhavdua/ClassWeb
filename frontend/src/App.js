@@ -17,7 +17,6 @@ import Alert from './Components/Alert';
 import Context from './Components/Context';
 import Enrolledgroups from './Components/Enrolledgroups';
 import Welcome from './Components/Welcome';
-import AdminLogin from './Components/AdminLogin';
 import Bar from './Components/Bar';
 import Workform from './Components/Workform';
 function App() {
@@ -41,7 +40,6 @@ function App() {
           </Route>
 
           <Route exact path='login' element={<Login/>}></Route>
-          <Route exact path='adminlogin' element={<AdminLogin/>}></Route>
           <Route exact path='signup' element={<Signup/>}></Route>
         </Routes>
       </div>
