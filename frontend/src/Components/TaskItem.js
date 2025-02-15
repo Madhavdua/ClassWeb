@@ -40,8 +40,8 @@ function TaskItem(props) {
         <>
             <div className='border-top border-primary border-3 my-2 p-2 taskitem-card my-1'>
 
-                    <img src={todoimg} className="todoimg" width={'100%'} alt="..." />
-                    <div className='d-flex flex-column'>
+                    <img src={todoimg} className="todoimg mx-1" alt="..." />
+                    <div className='d-flex flex-column flex-wrap'>
 
                         <div className=' fs-4'>
                             {task.title}

@@ -23,11 +23,12 @@
     height: 100vh;
     display: flex;
     padding-right: 9vw;
-    justify-content:end;
+    justify-content:center;
+    
 }
 .section{
     width: 40%;
-    height: 100%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,13 +66,15 @@
 
 .sh1{
     font-family: "Roboto Mono", serif;
-    font-size: 1.4vw;
+    font-size: larger;
 }
 .bggif1{
     position: absolute;
     z-index: -1;
     bottom: 0;
     left: 0;
+    max-height: 40vh;
+    max-width: 99%;
 }
 
 
@@ -79,6 +82,7 @@
 .taskitem-card{
     width: 45vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
 }
@@ -298,13 +302,39 @@
         width: fit-content;
         top: 2%;
     }
+    .section{
+        width: 100vw;
+        max-height: 50vh;
 
+    }
+    .heading{
+        font-size: xx-large;
+    }
+    .sh1{
+        font-size: larger;
+    }
+    .bggif1{
+        max-width: 90vw;
+    }
+
+    .taskitem-card{
+        max-width: 95vw;
+        justify-content: center;
+        width: 400px;
+    }
+.todoimg{
+    width: auto;
+    height: 9vw;
+}
 
 }
 
 @media screen and (max-width:750px) {
 
-
+    
+    .section{
+        width: 100%;
+    }
     .card-head-box {
         height: 15vh;
     }
