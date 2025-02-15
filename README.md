@@ -1,4 +1,4 @@
-🔗Explore the live version of the project 𝐡𝐭𝐭𝐩𝐬://𝐜𝐥𝐚𝐬𝐬𝐫𝐨𝐨𝐦𝟐-𝟎.𝐯𝐞𝐫𝐜𝐞𝐥.𝐚𝐩𝐩/ 
+🔗Explore the live version of the project https://class-web-iota.vercel.app/
 📝 Project Overview:
 Welcome to Classroom 2.0, an innovative e-learning platform inspired by the best features of Google Classroom.
 
