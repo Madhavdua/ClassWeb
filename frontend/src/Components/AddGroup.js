@@ -30,18 +30,18 @@ function AddGroup() {
 
                 <div className="modal fade" id="addgroup" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div className="modal-dialog" >
-                        <div className="modal-content" style={{backgroundColor:"#87b1f5", fontWeight:"bold"}}>
+                        <div className="modal-content">
                             <div>
 
-                                <form className="container my-3 mx-2" style={{ width: "90%" }}>
+                                <form className="container my-3 mx-2" >
                                     <div className="mb-3" >
-                                        <label htmlFor="exampleInputEmail1" className="form-label">Enter class code</label>
-                                        <input style={{backgroundColor:""}} type="text" className="form-control" placeholder='Enter a valid code' name='code' onChange={onChange} />
+                                        <label htmlFor="exampleInputEmail1" className="form-label fs-5">Enter class code</label>
+                                        <input type="text" className="form-control" placeholder='Enter a valid code' name='code' onChange={onChange} />
                                     </div>
                                    
-                                    <div className="modal-footer " style={{justifyContent:"center"}}>
-                                        <button id='closemodal' type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                        <button disabled={code.length<6} type="submit" className="btn bg-light text dark" onClick={(e)=>{
+                                    <div className="modal-footer " >
+                                        <button id='closemodal' type="button" className="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                        <button disabled={code.length<6} type="submit" className="btn bg-dark text-light" onClick={(e)=>{
 
                                             handleSubmit(e)}} >Add Class</button>
                                     </div>

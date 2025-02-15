@@ -1,10 +1,9 @@
 import React, { Children } from 'react'
 import context from '../Context/createContext';
 import { useState, useEffect } from 'react';
-import env from "react-dotenv";
 function Context(props) {
   
-  const server = env.BASE_URL || "http://127.0.0.1";
+  const server = process.env.REACT_APP_BASE_URL || "http://127.0.0.1";
 
   const [progress, setprogress] = useState(0);
   const [workform, setWorkform] = useState(false);
@@ -224,6 +223,7 @@ function Context(props) {
     console.log(json);
     if (json.success === true) {
       localStorage.setItem('token', json.authToken);
+      localStorage.setItem('isAdmin',json.isAdmin);
       setLoggedIn(true);
       return true;
     }
@@ -240,14 +240,7 @@ function Context(props) {
 
     return await apiCall(route, body);
   }
-  const adminlogin = async (username, password) => {
-    localStorage.setItem('username', username);
-    setUsername(username)
-    let route = '/api/auth/adminlogin';
-    const body = JSON.stringify({ username: username, password: password });
-
-    return await apiCall(route, body);
-  }
+ 
 
   const signUp = async (username, password) => {
     setUsername(username)
@@ -258,7 +251,7 @@ function Context(props) {
 
 
   return (
-    <context.Provider value={{ tasks, setTasks, msg, setAlert, setMsg, alert, loggedIn, setLoggedIn, username, setUsername, login, signUp, fetchgroups, group, setGroup, addgroup, addtask, fetchtasks, adminlogin, creategroup, removegroup, progress, setprogress, workform, setWorkform, fileupload, showattachment, deletetask, deletegroup }}>
+    <context.Provider value={{ tasks, setTasks, msg, setAlert, setMsg, alert, loggedIn, setLoggedIn, username, setUsername, login, signUp, fetchgroups, group, setGroup, addgroup, addtask, fetchtasks,  creategroup, removegroup, progress, setprogress, workform, setWorkform, fileupload, showattachment, deletetask, deletegroup }}>
       {props.children}
     </context.Provider>
   )
