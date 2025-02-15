@@ -22,7 +22,8 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content:center;
+    padding-right: 9vw;
+    justify-content:end;
 }
 .section{
     width: 40%;
@@ -31,22 +32,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
 }
+
 .login-link{
     background-color: rgb(243, 245, 250);
     font-size: large;
     font-family: "Work Sans", serif;
     font-weight: 500;
     width: 120px;
-    
+    animation: jump 2s infinite ease-in-out;
 }
-.leaning-img{
-    position: absolute;
-    height: 80vh;
-    left: 0;
-    bottom: 0;
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.login-link:hover{
+    animation: none;
 }
 .logo {
     height: 60px;
@@ -66,20 +67,28 @@
     font-family: "Roboto Mono", serif;
     font-size: 1.4vw;
 }
-
-
-/* for sample login */
-.sample-login {
+.bggif1{
     position: absolute;
-    right: 5%;
-    bottom: 5vh;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
 }
 
 
 /* taskitem */
+.taskitem-card{
+    width: 45vw;
+    display: flex;
+    justify-content: space-between;
+
+}
 .taskitem-card:hover {
     background-color: rgb(237, 235, 235);
     transform: translateY(-2px);
+}
+.todoimg{
+    height: 9vh;
+    width: auto;
 }
 
 /* group card */
@@ -90,17 +99,14 @@
 }
 
 .grp-name-pill>button {
-    background-image: linear-gradient(rgb(145, 145, 208), rgb(91, 187, 91));
     border: none;
+    font-size: 2vw;
+    font-weight: 500;
+    background-color: black;
     color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 16px;
+    border-radius: 5%;
+    padding: 1%;
+    font-family: monospace;
 }
 
 /* group item */
@@ -151,6 +157,15 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+}
+
+/* assign task form */
+.assign-task-form {
+    text-align: center;
+    font-family: "Work Sans", serif;    
+}
+.assign-task-form, label{
+    font-weight: bold;
 }
 
 /* tooltips */
@@ -247,19 +262,34 @@
     transform: translateX(-50%);
 }
 
+
+/* login page */
 .complete_screen {
-    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
 }
-
 .login_box {
-    height: auto;
+    height: fit-content; 
+    width: fit-content;
+    
+}
+.login-input{
+    font-size: 12px;
+}
+.login-submit {
+    width: 20vw;
+    background-color: black;
+    color: white;
 }
 
 .card-head-box {
     height: 18vh;
 }
+
+
 
 @media screen and (max-width:900px) {
 

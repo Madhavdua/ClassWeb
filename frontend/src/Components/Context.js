@@ -1,10 +1,9 @@
 import React, { Children } from 'react'
 import context from '../Context/createContext';
 import { useState, useEffect } from 'react';
-import env from "react-dotenv";
 function Context(props) {
   
-  const server = env.BASE_URL || "http://127.0.0.1";
+  const server = process.env.REACT_APP_BASE_URL || "http://127.0.0.1";
 
   const [progress, setprogress] = useState(0);
   const [workform, setWorkform] = useState(false);

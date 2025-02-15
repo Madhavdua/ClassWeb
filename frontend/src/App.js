@@ -33,6 +33,7 @@ function App() {
         <Alert/>
         <Routes>
           <Route exact path='/' element={<Welcome/>}></Route>
+          <Route exact path='/*' element={<Welcome/>}></Route>
           <Route exact path='dashboard' element={<Dashboard/>}>
               <Route path='task' element={<Task/>}></Route>
               <Route path='groups' element={<Enrolledgroups/>}></Route>
